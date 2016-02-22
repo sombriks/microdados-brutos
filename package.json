@@ -1,0 +1,16 @@
+{
+  "name": "microdadosenem",
+  "version": "0.0.0",
+  "description": "projeto para fazer a raspagem de dados do enem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "knex": "~0.10.0",
+    "pg": "~4.4.6",
+    "sqlite3": "~3.1.1"
+  }
+}
