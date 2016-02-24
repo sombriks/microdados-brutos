@@ -2,7 +2,7 @@ var knexfile = require('./knexfile');
 var knex     = require('knex')(knexfile.production);
 var fs       = require('fs');
 
-var file     = "DADOS_ENEM_1998.TXT";// process.argv[2];
+var file     = "DADOS_ENEM_1999.TXT";// process.argv[2];
 var fd       = fs.openSync(file,'rs');
 var buffer   = new Buffer(478);
 var read     = 0;
@@ -16,6 +16,7 @@ function lineinsert(line){
     TP_SEXO                : line.substring(n,n+=8),
     CODMUNIC_INSC          : line.substring(n,n+=12),
     DS_CIDADE              : line.substring(n,n+=50),
+    IN_CONCLUIU            : line.substring(n,n+=8),
     IN_PRESENCA            : line.substring(n,n+=8),
     VL_PERC_COMP1          : line.substring(n,n+=8),
     VL_PERC_COMP2          : line.substring(n,n+=8),
@@ -160,14 +161,6 @@ function lineinsert(line){
     Q127                   : line.substring(n,n+=1),
     Q128                   : line.substring(n,n+=1),
     Q129                   : line.substring(n,n+=1),
-    Q130                   : line.substring(n,n+=1),
-    Q131                   : line.substring(n,n+=1),
-    Q132                   : line.substring(n,n+=1),
-    Q133                   : line.substring(n,n+=1),
-    Q134                   : line.substring(n,n+=1),
-    Q135                   : line.substring(n,n+=1),
-    Q136                   : line.substring(n,n+=1),
-    Q137                   : line.substring(n,n+=1),
     VT_RESP_OBJETIVA       : line.substring(n,n+=63),
     TP_PROVA               : line.substring(n,n+=1),
     VT_GABARITO_PROVA      : line.substring(n,n+=63),
