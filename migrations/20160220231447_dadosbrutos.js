@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable("dadosbrutos",function(table){
+  return knex.schema.createTable("DADOS_ENEM_1998",function(table){
     table.string("MASC_INSCRITO"          ,8);
     table.string("NU_ANO"                 ,8);
     table.string("DT_NASCIMENTO"          ,20);
@@ -168,5 +168,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable("dadosbrutos");
+  return knex.schema.dropTable("DADOS_ENEM_1998");
 };
