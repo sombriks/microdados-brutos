@@ -18,3 +18,5 @@ LEIA-ME_ENEM_2004.pdf
 LEIA-ME_ENEM_2005.pdf
 LEIA-ME_ENEM_2006.pdf
 node_modules
+*.txt
+*.pdf

@@ -93,7 +93,13 @@ exports.up = function(knex, Promise) {
     table.string("Q33_5",1);
     table.string("Q33_6",1);
     table.string("Q33_7",1);
-    table.string("Q34",1);
+    table.string("Q34_1",1);
+    table.string("Q34_2",1);
+    table.string("Q34_3",1);
+    table.string("Q34_4",1);
+    table.string("Q34_5",1);
+    table.string("Q34_6",1);
+    table.string("Q34_7",1);
     table.string("Q35",1);
     table.string("Q36",1);
     table.string("Q37",1);
