@@ -4,7 +4,7 @@ var fs       = require('fs');
 
 var file     = "DADOS_ENEM_2003.TXT";// process.argv[2];
 var fd       = fs.openSync(file,'rs');
-var buffer   = new Buffer(709);
+var buffer   = new Buffer(654);
 var read     = 0;
 
 function lineinsert(line){
