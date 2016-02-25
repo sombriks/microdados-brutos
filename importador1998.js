@@ -1,5 +1,5 @@
 var knexfile = require('./knexfile');
-var knex     = require('knex')(knexfile.production);
+var knex     = require('knex')(knexfile.development);
 var fs       = require('fs');
 
 var file     = "DADOS_ENEM_1998.TXT";// process.argv[2];
@@ -9,7 +9,7 @@ var read     = 0;
 
 function lineinsert(line){
   var n = 0;
-  return knex("dadosbrutos").insert({
+  return knex("DADOS_ENEM_1998").insert({
     MASC_INSCRITO          : line.substring(n,n+=8),
     NU_ANO                 : line.substring(n,n+=8),
     DT_NASCIMENTO          : line.substring(n,n+=20),
