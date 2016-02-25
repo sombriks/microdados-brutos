@@ -10,4 +10,4 @@ Para rodar o ultimo migrate depois de preenchido.
  knex migrate:latest
 
 Para rodar o script:
-nome importadoranodoenem.js 
+node importadoranodoenem.js 

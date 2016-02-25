@@ -4,7 +4,7 @@ var fs       = require('fs');
 
 var file     = "DADOS_ENEM_2002.TXT";// process.argv[2];
 var fd       = fs.openSync(file,'rs');
-var buffer   = new Buffer(709);
+var buffer   = new Buffer(677);
 var read     = 0;
 
 function lineinsert(line){
@@ -110,7 +110,7 @@ function lineinsert(line){
   Q34_7                  : line.substring(n,n+=1),
   Q35                    : line.substring(n,n+=1),
   Q36                    : line.substring(n,n+=1),
-// ??? Q37                    : line.substring(n,n+=1),
+  Q37                    : line.substring(n,n+=1),
   Q38                    : line.substring(n,n+=1),
   Q39                    : line.substring(n,n+=1),
   Q40                    : line.substring(n,n+=1),
