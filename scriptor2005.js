@@ -272,7 +272,11 @@ var rl = readline.createInterface({
   terminal:false,
   historySize:0,
 });
-
+var lc = 0;
 rl.on("line",function(line){
-  fs.appendFile("DADOS_ENEM_2005.sql",renderinsert(line)+"\r\n");
+  fs.appendFile("DADOS_ENEM_2005.sql",renderinsert(line)+";\r\n");
+  lc++;
+  if(lc % 10000 == 0)
+    console.log("wrote "+lc+" inserts at "+(new Date()));
 });
+// psql -h localhost -U postgres -W microdadosenem2 < DADOS_ENEM_1998.sql
