@@ -3,7 +3,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'microdadosenem',
+      database: 'microdadosenem2',
       user:     'postgres',
       postgres: 'postgres'
     },
