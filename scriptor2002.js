@@ -2,9 +2,9 @@ var fs       = require('fs');
 var readline = require('readline');
 var knexfile = require('./knexfile');
 var knex     = require('knex')(knexfile.development);
-var layout   = require("./layoutdb/DADOS_ENEM_2005");
+var layout   = require("./layoutdb/DADOS_ENEM_2002");
 
-var file = "DADOS_ENEM_2005.TXT";
+var file = "DADOS_ENEM_2002.TXT";
 
 function renderinsert(line){
   var n = 0;
@@ -12,7 +12,7 @@ function renderinsert(line){
   for(var attr in layout.columns){
     data[attr]=line.substring(n,n+=layout.columns[attr])
   }
-  return knex("DADOS_ENEM_2005").insert(data).toString();
+  return knex("DADOS_ENEM_2002").insert(data).toString();
 }
 
 var rl = readline.createInterface({
@@ -23,9 +23,9 @@ var rl = readline.createInterface({
 
 var lc = 0;
 rl.on("line",function(line){
-  fs.appendFile("DADOS_ENEM_2005.sql",renderinsert(line)+";\r\n");
+  fs.appendFile("DADOS_ENEM_2002.sql",renderinsert(line)+";\r\n");
   lc++;
   if(lc % 10000 == 0)
     console.log("wrote "+lc+" inserts at "+(new Date()));
 });
-// psql -h localhost -U postgres -W microdadosenem2 < DADOS_ENEM_2005.sql
+// psql -h localhost -U postgres -W microdadosenem2 < DADOS_ENEM_2002.sql
