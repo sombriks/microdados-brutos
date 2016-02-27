@@ -4,7 +4,7 @@ dev.sqlite3
 node_modules
 
 *.txt
-
+*.sql
 *.pdf
 TXT_DADOS
 PDF_LEIA_ME
