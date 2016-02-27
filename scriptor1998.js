@@ -20,6 +20,7 @@ var rl = readline.createInterface({
   terminal:false,
   historySize:0,
 });
+
 var lc = 0;
 rl.on("line",function(line){
   fs.appendFile("DADOS_ENEM_1998.sql",renderinsert(line)+";\r\n");
