@@ -1,7 +1,6 @@
 module.exports = {
-  key:["MASC_INSCRITO","NU_ANO"],
+  key:["NU_INSCRICAO","NU_ANO"],
   columns:{
-//DICIONARIO_VARIAVEIS 2014 PRIMEIRA ABA DO DICIONARIO_MICRODADOS_ENEM_2013
     NU_INSCRICAO              :12,
     NU_ANO                    :4,
     COD_MUNICIPIO_RESIDENCIA  :7,
@@ -170,15 +169,5 @@ module.exports = {
     Q074                       :1,
     Q075                       :1,
     Q076                       :1,
-
-//TS_CONSISTENCIA_CENSO SEGUNDA ABA DA PLANILHA
-//OUTRA TABELA PROVÁVELMENTE
-    ID_ENEM_ESCOLA             :6,
-    NU_INSCRICAO               :12,
-    NU_ANO                     :4,
-    COD_ESCOLA                 :8,
-    COD_UF_ESC                 :2,
-    ID_DEPENDENCIA_ADM_ESC     :1,
-    ID_LOCALIZACAO_ESC         :1,
   }
 };
