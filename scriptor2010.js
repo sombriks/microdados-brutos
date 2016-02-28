@@ -2,30 +2,56 @@ var fs       = require('fs');
 var readline = require('readline');
 var knexfile = require('./knexfile');
 var knex     = require('knex')(knexfile.development);
-var layout   = require("./layoutdb/DADOS_ENEM_2010");
+var layout1  = require("./layoutdb/DADOS_ENEM_2010");
+var layout2  = require("./layoutdb/QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010");
 
-var file     = "DADOS_ENEM_2010.TXT";
+var file1     = "DADOS_ENEM_2010.TXT";
+var file2     = "QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010.TXT";
 
-function renderinsert(line){
+function renderinsert1(line){
   var n = 0;
   var data = {}
-  for(var attr in layout.columns){
-    data[attr]=line.substring(n,n+=layout.columns[attr])
+  for(var attr in layout1.columns){
+    data[attr]=line.substring(n,n+=layout1.columns[attr])
   }
   return knex("DADOS_ENEM_2010").insert(data).toString();
 }
 
-var rl = readline.createInterface({
-  input:fs.createReadStream(file),
+var rl1 = readline.createInterface({
+  input:fs.createReadStream(file1),
   terminal:false,
   historySize:0,
 });
 
-var lc = 0;
-rl.on("line",function(line){
-  fs.appendFile("DADOS_ENEM_2010.sql",renderinsert(line)+";\r\n");
-  lc++;
-  if(lc % 10000 == 0)
-    console.log("wrote "+lc+" inserts at "+(new Date()));
+var lc1 = 0;
+rl1.on("line",function(line){
+  fs.appendFile("DADOS_ENEM_2010.sql",renderinsert1(line)+";\r\n");
+  lc1++;
+  if(lc1 % 10000 == 0)
+    console.log("wrote "+lc1+" inserts on DADOS_ENEM_2010 at "+(new Date()));
 });
 // psql -h localhost -U postgres -W microdadosenem2 < DADOS_ENEM_2010.sql
+
+function renderinsert2(line){
+  var n = 0;
+  var data = {}
+  for(var attr in layout2.columns){
+    data[attr]=line.substring(n,n+=layout2.columns[attr])
+  }
+  return knex("QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010").insert(data).toString();
+}
+
+var rl2 = readline.createInterface({
+  input:fs.createReadStream(file2),
+  terminal:false,
+  historySize:0,
+});
+
+var lc2 = 0;
+rl2.on("line",function(line){
+  fs.appendFile("QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010.sql",renderinsert1(line)+";\r\n");
+  lc2++;
+  if(lc2 % 10000 == 0)
+    console.log("wrote "+lc2+" inserts on QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010 at "+(new Date()));
+});
+// psql -h localhost -U postgres -W microdadosenem2 < QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010.sql

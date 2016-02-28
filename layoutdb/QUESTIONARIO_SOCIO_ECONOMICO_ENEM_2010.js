@@ -1,5 +1,5 @@
 module.exports = {
-  key:["NU_INSCRICAO","IN_QSE"],
+  key:["NU_INSCRICAO"],
   columns:{
     NU_INSCRICAO              :12,
     IN_QSE                    :1,
