@@ -1,13 +1,22 @@
 # microdados-brutos
-script para carga de dados brutos do enem de 1998
+scripts para criar arquivos de carga de dados brutos dos enem's de 1998 até 2014
 
-posto que leitura de arquivo é mais rápido que inserções em banco, devemos nos abster das capacidades assíncronas do node para impedir eventuais estouros de memória.
+a partir de arquivos *JSON*, criamos tabelas usando os arquivos de migrate do [knexjs](http://knexjs.org/)
 
-para criar migrate:
-No terminal knex migrate:make esquema_dados_anodoenem
+Para criar o esquema de banco de dados, execute as migrações de banco:
 
-Para rodar o ultimo migrate depois de preenchido.
- knex migrate:latest
+```$ knex migrate:latest```
 
-Para rodar o script:
-node importadoranodoenem.js 
+Para criar, a partir dos arquivos do exame, scripts sql de inserção:
+
+```$ node scriptortxt2sql.js DADOS_ENEM_2011.TXT```
+
+Caso o formato do arquivo já seja *.csv*:
+
+```$ node scriptorcsv2sql.js MICRODADOS_ENEM_2014.csv```
+
+Por fim, o arquivo sql gerado pode ser importado normalmente:
+
+```$ psql -h localhost -U postgres microdadosenem -W < MICRODADOS_ENEM_2014.sql```
+
+Todos os dados de todas as edições do exame podem ser encontrados [aqui](http://portal.inep.gov.br/basica-levantamentos-acessar)
