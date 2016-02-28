@@ -1,5 +1,5 @@
 module.exports = {
-  key:["MASC_INSCRITO","NU_ANO"],
+  key:["NU_INSCRICAO","NU_ANO"],
   columns:{
     NU_INSCRICAO              :16,
     NU_ANO                    :8,
