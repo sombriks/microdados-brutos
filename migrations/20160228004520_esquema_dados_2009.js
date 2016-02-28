@@ -17,5 +17,6 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable("DADOS_ENEM_2009");
+  return knex.schema.dropTable("DADOS_ENEM_2009")
+    .dropTable("QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2009");
 };

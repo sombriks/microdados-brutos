@@ -5,23 +5,23 @@ module.exports = {
     NU_ANO                    :4,
     COD_MUNICIPIO_RESIDENCIA  :7,
     NO_MUNICIPIO_RESIDENCIA   :150,
-    COD_UF_RESIDENCIA         :,//TA SEM TAMANHO
+    COD_UF_RESIDENCIA         :2,//TA SEM TAMANHO
     UF_RESIDENCIA             :2,
     IN_ESTUDA_CLASSE_HOSPITALAR   :1,
     COD_ESCOLA                :8,
     COD_MUNICIPIO_ESC         :7,
     NO_MUNICIPIO_ESC          :150,
-    COD_UF_ESC                :,//TA SEM TAMANHO
+    COD_UF_ESC                :2,//TA SEM TAMANHO
     UF_ESC                    :2,
     ID_DEPENDENCIA_ADM_ESC    :1,
     ID_LOCALIZACAO_ESC        :1,
     SIT_FUNC_ESC              :1,
     IDADE                     :3,
     TP_SEXO                   :1,
-    NACIONALIDADE             :,//TA SEM TAMANHO
+    NACIONALIDADE             :1,//TA SEM TAMANHO
     COD_MUNICIPIO_NASCIMENTO  :7,
     NO_MUNICIPIO_NASCIMENTO   :150,
-    COD_UF_NASCIMENTO         :,//TA SEM TAMANHO
+    COD_UF_NASCIMENTO         :2,//TA SEM TAMANHO
     UF_NASCIMENTO             :2,
     ST_CONCLUSAO              :1,
     ANO_CONCLUIU              :4,
