@@ -1,5 +1,5 @@
 module.exports = {
-  key:["DS_COR","ID_PROVA"],
+  key:["ID_ITEM","ID_PROVA"],
   columns:{
     ID_POSICAO                :3,
     COD_AREA                  :2,

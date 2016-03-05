@@ -1,8 +1,5 @@
-
-dev.sqlite3
-
+*.sqlite3
 node_modules
-
 *.txt
 *.sql
 *.pdf
@@ -11,3 +8,4 @@ PDF_LEIA_ME
 *.TXT
 *.PDF
 *.csv
+*.zip
